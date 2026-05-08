@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="box">
+<h2>Login</h2>
+<p class="subtitle">Choose your role and sign in securely</p>
+<form method="post">
+<div class="role-group">
+<label class="role-option">
+<input type="radio" name="role" value="admin" checked>
+<span>Admin</span>
+</label>
+<label class="role-option">
+<input type="radio" name="role" value="staff">
+<span>Employee</span>
+</label>
+</div>
+<input type="text" name="username" placeholder="Admin username or employee email" required>
+<input type="password" name="password" placeholder="Password" required>
+<button type="submit">Login</button>
+{% if error %}
+<p class="error">{{ error }}</p>
+{% endif %}
+</form>
+<div class="login-help">
+<p><strong>Admin login:</strong> <code>admin</code> / <code>admin</code></p>
+<p><strong>Employee login:</strong> your registered email and password</p>
+<p class="signup-link">New employee? <a href="/signup">Sign up here</a></p>
+</div>
+</div>
+</body>
+</html>

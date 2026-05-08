@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Signup</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="box">
+    <h2>Employee Signup</h2>
+    <p class="subtitle">Create an employee account to access your dashboard.</p>
+    <form method="post">
+        <input type="text" name="name" placeholder="Full Name" required><br>
+        <input type="email" name="email" placeholder="Email" required><br>
+        <input type="password" name="password" placeholder="Password" required><br>
+        <input type="number" name="basic" placeholder="Basic Salary (optional)" step="0.01" min="0"><br>
+        <button type="submit">Sign Up</button>
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+    </form>
+    <p class="login-link">Already have an account? <a href="/">Login here</a></p>
+</div>
+</body>
+</html>
